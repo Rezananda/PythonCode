@@ -1,3 +1,4 @@
+### Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
 import socket,random,json,time
 
 tcp_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -12,7 +13,7 @@ while True:
     tcp_sock.sendall( (json.dumps(data)).encode('ascii') )
 
     time.sleep(1)
-    
+
     data = tcp_sock.recv(1024)
     data = data.decode('ascii')
     print(data)
