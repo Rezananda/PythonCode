@@ -1,11 +1,4 @@
-import argparse, socket, sys, threading, time
-
-def multiSend(sock,output):
-    try:
-        sock.send(output)
-        time.sleep(1)
-    except (socket.error):
-        print("!")
+import argparse, socket, sys
 
 def server(host, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -17,20 +10,16 @@ def server(host, port):
         sc, sockname = sock.accept()
         print('Processing up to 1024 bytes at a time from', sockname)
         n = 0
+        output="".encode('ascii')
         while True:
             data = sc.recv(1024)
             if not data:
                 break
-            output = data.decode('ascii').upper().encode('ascii')
-
-            process=threading.Thread(target=multiSend, args=(sc,output))
-            process.start()
-
-            process.join()
-
+            output += data.decode('ascii').upper().encode('ascii')
             n += len(data)
             print('\r %d bytes processed so far' % (n,), end=' ')
             sys.stdout.flush()
+        sc.sendall(output) # send it back uppercase
         print()
         sc.close()
         print(' Socket closed')
