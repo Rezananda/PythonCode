@@ -16,4 +16,4 @@ Collection of my personal Python code, mostly related with computer network.
 - HttpLib2
 
 ## License
-GPL 3.0
+GPL 2.0
