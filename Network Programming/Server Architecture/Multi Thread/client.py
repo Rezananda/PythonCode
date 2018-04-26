@@ -4,14 +4,15 @@ import time
 
 srv_ip, srv_port = sys.argv[1].split(":")
 srv_sockaddr = (srv_ip, int(srv_port))
-payload = b'x' * int(sys.argv[2])
+count = int(sys.argv[2])
+payload = b'x' * 1024
 
 clientsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientsock.connect(srv_sockaddr)
 
 print('Client has been assigned socket name', clientsock.getsockname())
 totalRTT = 0
-for i in range(1,11):
+for i in range(1,count):
     sendtime = time.time()
     clientsock.send(payload)
     reply = clientsock.recv(2048)
