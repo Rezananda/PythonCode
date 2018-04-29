@@ -1,64 +1,75 @@
 # Ahmad Riyadh Al Faathin - www.faathin.com - https://github.com/riyadh11
 # Chat server menggunakan Select
  
-import socket, select, string, sys, json
- 
-#Fungsi untuk mengirimkan pesan broadcast
-def broadcast_data (sock, message):
-    #Tidak mengirimkan pesan ke pengirim awal dan socket bind
-    for socket in CONNECTION_LIST:
-        if socket != server_socket and socket != sock :
-            try :
-                socket.send(json.dumps(message).encode("ascii"))
-            except :
-                # client tidak dapat dikirimi pesan
-                socket.close()
-                CONNECTION_LIST.remove(socket)
+import socket, select, string, sys, json, datetime
 
-def get_name (sock):
+#Mengirimkan pesan
+def send(sock,payload) :
+    try :
+        sock.send(json.dumps(payload).encode("ascii"))
+        return True
+    except :
+        # client tidak dapat dikirimi pesan
+        sock.close()
+        CONNECTION_LIST.remove(socket)
+        return False
+
+#Fungsi untuk membuat pesan json
+def createMessage(username,message,flag) :
+    return {
+        "username" : username,
+        "message": message,
+        "flag": flag,
+        "time": now.strftime("%A %d. %B %Y")
+        }
+
+#Fungsi untuk mengirimkan pesan broadcast
+def broadcastData (sender, receiver, message, flag):
+    #Tidak mengirimkan pesan ke pengirim awal dan socket bind
+    payload=createMessage(sender,message,flag)
+    for socket in CONNECTION_LIST:
+        if socket != server_socket and socket != receiver :
+            send(socket,payload)
+    return True
+
+#Fungsi untuk mengirimkan pesan private message
+def privateData (sender,receiver,message,flag):
+    socket=checkUser(receiver)
+    if(socket==False):
+            return False
+    else:
+        socket=socket[0]
+        payload=createMessage(sender,message,flag)
+        return send(socket,payload)
+
+#Fungsi untuk mendapatkan sock dari username
+def getName (sock):
     for client in CLIENT_LIST :
         if(sock==client[0]) :
             return client[1]
     return False
 
-def check_user (username):
+#Fungsi untuk mendapatkan data dari sebuah sock
+def checkUser (username):
     for client in CLIENT_LIST :
         if(client[1]==username):
             return client
     return False
 
-def private_data (username,message):
-    socket=check_user(username)
-    if(socket==False):
-            return False
-    else:
-        socket=socket[0]
-        try :
-            socket.send(json.dumps(message).encode("ascii"))
-            return True
-        except :
-            # client tidak dapat dikirimi pesan
-            socket.close()
-            CONNECTION_LIST.remove(socket)
-            return False
-
-def someone_logout(sock):
-    data={
-        "sender": "Server",
-        "message": "%s Left the Room\n" % get_name(sock),
-        "flag": "Broadcast"
-        }
-                    
-    broadcast_data(sock, data)
+#Fungsi untuk mengirimkan pesan broadcast logout
+def someoneLogOut(sock):
+    broadcastData("Server", sock ,"%s Left the Room" % getName(sock), "Anouncement")
     sock.close()
     CONNECTION_LIST.remove(sock)
-    CLIENT_LIST.remove([sock,get_name(sock)])
+    CLIENT_LIST.remove([sock,getName(sock)])
  
 if __name__ == "__main__":
     # Argument Port
     if(len(sys.argv) < 3) :
         print ("Usage : python3 server.py hostname port")
         sys.exit()
+    #Date
+    now = datetime.datetime.now()
 
     # List socket dari client
     CONNECTION_LIST = []
@@ -96,85 +107,47 @@ if __name__ == "__main__":
                     try:
                         data = sock.recv(RECV_BUFFER)
                         if data:
-                            Message=data.decode("ascii")
-                            if "[LOGIN]" in Message :
-                                clientName=Message[7::]
-                                print("[Info]Login "+clientName)
-                                User=check_user(Message[7::])
+                            data=json.loads(data.decode("ascii"))
+                            if(data["flag"]=="login"):
+                                sender=data['message']
+                                print("[Info]Login "+sender)
+                                User=checkUser(sender)
                                 if(User==False):
-                                    print("[Info]Success Login "+clientName)
-                                    data={
-                                        "sender": "Server",
-                                        "message": "Selamat Bergabung di Group Chat\n",
-                                        "flag": "Anouncement"
-                                        }
-
-                                    sockfd.send((json.dumps(data)).encode("ascii"))
-
-                                    data={
-                                        "sender": "Server",
-                                        "message": "%s Join the Room\n" % clientName,
-                                        "flag": "Anouncement"
-                                        }
-                                    broadcast_data(sockfd, data)
-
-                                    data=[sockfd,Message[7:]]
-                                    CLIENT_LIST.append(data)
+                                    print("[Info]Success Login "+sender)
+                                    CLIENT_LIST.append([sock,sender])
+                                    privateData("Server",sender,"Selamat Bergabung di Group Chat","login")
+                                    broadcastData("Server",sock,"%s Join the Room" % sender, "Anouncement")
                                 else:
-                                    print("[Warn]Error Login "+clientName)
-                                    data={
-                                        "sender": "Server",
-                                        "message": "Username sudah digunakan, Log Out!\n",
-                                        "flag": "Anouncement"
-                                        }
-
-                                    sockfd.send((json.dumps(data)).encode("ascii"))
-                                    sockfd.close()
-                                    CONNECTION_LIST.remove(sockfd)
-                                    CLIENT_LIST.remove([sockfd,get_name(sockfd)])
-                            elif "[LOGOUT]" in Message :
+                                    print("[Warn]Error Login "+sender)
+                                    send(sock,createMessage("Server","Username sudah digunakan, Log Out!","login"))
+                                    sock.close()
+                                    CONNECTION_LIST.remove(sock)
+                            elif(data['flag']=="logout"):
                                 print("[Info]Log Out ")
-                                someone_logout(sockfd)
-                            elif "\pc " in Message:
-                                print("[Info]Private Message")
-                                clientName=get_name(sock)
-                                personal=Message[4:].split(" ")[0]
-                                Message=Message[len(personal)+5:]
-                                data={
-                                    "sender": clientName,
-                                    "message": Message,
-                                    "flag": "Private"
-                                    }
-                                if private_data(personal,data)==False:
-                                    print("[Warn]Cannot Send Private Message to  "+clientName)
-                                    data={
-                                        "sender": "Server",
-                                        "message": "Private Chat tidak bisa dikirimkan!",
-                                        "flag": "Anouncement"
-                                        }
-                                    sockfd.send((json.dumps(data)).encode("ascii"))
-                            elif "\list" in Message:
-                                print("[LOG]Request List")
-                                list=[]
-                                for client in CLIENT_LIST :
-                                    list.append(client[1])
-                                data={
-                                    "sender": "Server",
-                                    "message": "List Member : "+str(list)+"\n",
-                                    "flag": "Anouncement"
-                                    }
-                                sockfd.send((json.dumps(data)).encode("ascii"))
-                            else :
-                                print ("[Info]Broadcasting")
-                                clientName=get_name(sock)
-                                data={
-                                    "sender": clientName,
-                                    "message": data.decode("ascii"),
-                                    "flag": "Broadcast"
-                                    }
-                                broadcast_data(sock, data)
+                                someoneLogOut(sock)
+                            else:
+                                message=data['message']
+                                if("\pc " in message):
+                                    #Mencoba mengirim PC
+                                    print("[Info]Private Message")
+                                    sender=data['username']
+                                    receiver=message[4:].split(" ")[0]
+                                    message=message[len(receiver)+5:]
+                                    #Jika PC gagal dikirim
+                                    if privateData(sender,receiver,message,"private")==False:
+                                        print("[Warn]Cannot Send Private Message to "+receiver)
+                                        privateData("Server",sender,"Private Chat tidak bisa dikirimkan","feature")
+                                elif("\list" == message):
+                                    print("[LOG]Request List")
+                                    list=[]
+                                    for client in CLIENT_LIST :
+                                        list.append(client[1])
+                                    privateData("Server",data['username'],"List Member : "+str(list),"feature")
+                                else:
+                                    print ("[Info]Broadcasting")
+                                    broadcastData(data['username'],sock,data['message'],"broadcast")
                     except:
-                        someone_logout(sock)
+                        someoneLogOut(sock)
                         continue
     except KeyboardInterrupt:
         print("[LOG]Shutting Down")
