@@ -26,8 +26,9 @@ def send_msg(msg):
     msg = struct.pack('>I', len(msg)) + msg
     # Koneksi ke Receiver
     tcp_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    tcp_sock.connect(("127.0.0.1", 5555))
+    tcp_sock.connect(("192.168.10.11", 5555))
     tcp_sock.send(msg)
+    tcp_sock.shutdown(1)
     tcp_sock.close()
 
 #main function
@@ -41,7 +42,7 @@ if __name__ == "__main__":
     sub = mqtt_client.Client()
 
     # Koneksikan ke broker
-    sub.connect("192.168.10.11", 1883)
+    sub.connect("192.168.10.10", 1883)
 
     # List
     data = []
@@ -61,7 +62,7 @@ if __name__ == "__main__":
     # Subscribe ke sebuah topik
     sub.subscribe("/sensor/#")
 
-    print('[Info] Subscribe at sensor')
+    print('[Info] Subscribe at {} sensor'.format(str(NODES)))
 
     # Loop forever
     sub.loop_forever()

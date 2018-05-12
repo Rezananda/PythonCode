@@ -8,7 +8,7 @@ import random,json,time, datetime
 pub = mqtt_client.Client()
 
 # Koneksikan ke broker
-pub.connect("192.168.10.11", 1883)
+pub.connect("192.168.10.10", 1883)
 
 #main function
 if __name__ == "__main__":
