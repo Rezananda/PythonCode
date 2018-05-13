@@ -4,7 +4,7 @@ from pydoop import hdfs
 
 class StorageHandler:
     
-    hdfsobj=object
+    hdfsobj=hdfs.hdfs()
 
     def __init__(self, host, port):
         self.hdfsobj = hdfs.hdfs(host, port, user="vagrant", groups=["vagrant"])

@@ -4,18 +4,22 @@ import paho.mqtt.client as mqtt_client
 from sys import argv, exit
 import random,json,time, datetime
 
-# Inisiasi client sebagai publisher
-pub = mqtt_client.Client()
-
-# Koneksikan ke broker
-pub.connect("192.168.10.10", 1883)
-
 #main function
 if __name__ == "__main__":
      
     if(len(argv) < 2) :
         print ("Usage : python3 IoT.py <Identifier>")
         exit()
+
+    # Define Broker
+    BROKER_IP = "127.0.0.1"
+    BROKER_PORT = 1883
+    
+    # Inisiasi client sebagai publisher
+    pub = mqtt_client.Client()
+
+    # Koneksikan ke broker
+    pub.connect(BROKER_IP, BROKER_PORT)
 
     # Publish message
     while True:

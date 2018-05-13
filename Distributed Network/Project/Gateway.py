@@ -26,7 +26,7 @@ def send_msg(msg):
     msg = struct.pack('>I', len(msg)) + msg
     # Koneksi ke Receiver
     tcp_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    tcp_sock.connect(("192.168.10.11", 5555))
+    tcp_sock.connect((RECEIVER_IP, RECEIVER_PORT))
     tcp_sock.send(msg)
     tcp_sock.shutdown(1)
     tcp_sock.close()
@@ -38,11 +38,19 @@ if __name__ == "__main__":
         print ("Usage : python3 Gateway.py <Number of Nodes>")
         exit()
 
+    # Define Broker
+    BROKER_IP = "192.168.1.69"
+    BROKER_PORT = 1883
+
+    # Define Receiver
+    RECEIVER_IP = "192.168.10.11"
+    RECEIVER_PORT = 5555
+
     # Inisiasi client mqtt sebagai subscriber
     sub = mqtt_client.Client()
 
     # Koneksikan ke broker
-    sub.connect("192.168.10.10", 1883)
+    sub.connect(BROKER_IP, BROKER_PORT)
 
     # List
     data = []

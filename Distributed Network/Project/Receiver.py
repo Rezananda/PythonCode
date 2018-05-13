@@ -1,18 +1,10 @@
 ### Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
 # Import library mqtt, random, json, time
 import socket,threading,signal,sys, struct,json, datetime, os, errno, select, signal
-from StorageHandler import StorageHandler
 from sys import argv
-
-#main function
-if __name__ == "__main__":
-     
-    if(len(argv) != 1) :
-        print ("Usage : python3 Receiver.py")
-        exit()
+from DatabaseHandler import DatabaseHandler
+#from StorageHandler import StorageHandler
     
-    Storage = StorageHandler("192.168.10.11",9000)
-
 def handle_socket(conn):
     try :
         data=recv_msg(conn)
@@ -21,12 +13,9 @@ def handle_socket(conn):
             print("[Receive Data]")
             niceJson = json.loads(data)
 
-            directory = "/Logs/"+datetime.datetime.now().strftime("%d%m%y")
-            fileName = datetime.datetime.now().strftime("%H%M") + ".json"
-            jsonData = json.dumps(niceJson, sort_keys=False,indent=4, separators=(',', ': '))
-            
-            Storage.write(directory+"/"+fileName, "w", jsonData)
-                            
+            Database = DatabaseHandler(DATABASE_IP, DATABASE_PORT,"smartSystem")
+            Database.insertBulkDocument("sensor",niceJson)
+
     except (socket.error) :
         conn.close()
         print("[Warn] Connection Closed by Peer")
@@ -53,9 +42,24 @@ def recvall(sock, n):
         data += packet
     return data
 
+#main function
+if __name__ == "__main__":
+     
+    if(len(argv) != 1) :
+        print ("Usage : python3 Receiver.py")
+        exit()
+
+    # Define Receiver
+    RECEIVER_IP = "0.0.0.0"
+    RECEIVER_PORT = 5555
+
+    # Define Database
+    DATABASE_IP = "127.0.0.1"
+    DATABASE_PORT = 27017
+
 serversock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversock.setblocking(0)
-serversock.bind(("0.0.0.0", 5555))
+serversock.bind((RECEIVER_IP, RECEIVER_PORT))
 serversock.listen(1)
 rlist = [serversock]
 
