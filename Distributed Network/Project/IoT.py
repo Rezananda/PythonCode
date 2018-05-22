@@ -1,3 +1,4 @@
+#!/usr/bin/python
 ### Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
 # Import library mqtt, random, json, time
 import paho.mqtt.client as mqtt_client
@@ -8,11 +9,11 @@ import random,json,time, datetime
 if __name__ == "__main__":
      
     if(len(argv) < 2) :
-        print ("Usage : python3 IoT.py <Identifier>")
+        print ("Usage : python IoT.py <Identifier>")
         exit()
 
     # Define Broker
-    BROKER_IP = "127.0.0.1"
+    BROKER_IP = "192.168.10.11"
     BROKER_PORT = 1883
     
     # Inisiasi client sebagai publisher
@@ -42,5 +43,5 @@ if __name__ == "__main__":
         
         pub.publish("/sensor/"+argv[1], json.dumps(data))
 
-        print(data)
+        print (data)
         time.sleep(1)

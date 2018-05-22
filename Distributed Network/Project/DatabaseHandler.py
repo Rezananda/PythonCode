@@ -18,14 +18,14 @@ class DatabaseHandler:
         c = self.getCollection(collection)
         return c.insert_one(data)
 
-    def findOneDocument(self, collection, data):
+    def findOneDocument(self, collection, find={}, select={}):
         c = self.getCollection(collection)
-        return c.find_one(data)
+        return c.find_one(find, select)
 
     def insertBulkDocument(self, collection, data):
         c = self.getCollection(collection)
         return c.insert_many(data)
 
-    def findBulkDocument(self, collection, data):
+    def findBulkDocument(self, collection, find={}, select={}):
         c = self.getCollection(collection)
-        return c.find(data)
+        return c.find(find, select)

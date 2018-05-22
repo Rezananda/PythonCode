@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d9a904d-acf4-4446-ac9e-56b08c481d01" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/settings.json" afterPath="$PROJECT_DIR$/.vscode/settings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Indirect Communication/client.py" afterPath="$PROJECT_DIR$/Distributed Network/Indirect Communication/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Indirect Communication/server.py" afterPath="$PROJECT_DIR$/Distributed Network/Indirect Communication/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/json/jsonClient.py" afterPath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/json/jsonClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/json/jsonServer.py" afterPath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/json/jsonServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/multiClient.py" afterPath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/multiClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/multiServer.py" afterPath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/multiServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/simpleClient.py" afterPath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/simpleClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/simpleServer.py" afterPath="$PROJECT_DIR$/Distributed Network/Inter Process Communication/Socket/simpleServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Project/DatabaseHandler.py" afterPath="$PROJECT_DIR$/Distributed Network/Project/DatabaseHandler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Project/Gateway.py" afterPath="$PROJECT_DIR$/Distributed Network/Project/Gateway.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Project/IoT.py" afterPath="$PROJECT_DIR$/Distributed Network/Project/IoT.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Project/Receiver.py" afterPath="$PROJECT_DIR$/Distributed Network/Project/Receiver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Project/StorageAnalysis.py" afterPath="$PROJECT_DIR$/Distributed Network/Project/StorageAnalysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Project/StorageHandler.py" afterPath="$PROJECT_DIR$/Distributed Network/Project/StorageHandler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Remote Procedure Call/client.py" afterPath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Remote Procedure Call/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Remote Procedure Call/server.py" afterPath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Remote Procedure Call/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Rest HTTP/client.py" afterPath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Rest HTTP/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Rest HTTP/server.py" afterPath="$PROJECT_DIR$/Distributed Network/Remote Invocation/Rest HTTP/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Rest and MQTT/clientHttp.py" afterPath="$PROJECT_DIR$/Distributed Network/Rest and MQTT/clientHttp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Rest and MQTT/deviceIoT.py" afterPath="$PROJECT_DIR$/Distributed Network/Rest and MQTT/deviceIoT.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distributed Network/Rest and MQTT/middleware.py" afterPath="$PROJECT_DIR$/Distributed Network/Rest and MQTT/middleware.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/HTTP/bookISBN.py" afterPath="$PROJECT_DIR$/Network Programming/HTTP/bookISBN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/HTTP/bookQuery.py" afterPath="$PROJECT_DIR$/Network Programming/HTTP/bookQuery.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/HTTP/demoHttpClient.py" afterPath="$PROJECT_DIR$/Network Programming/HTTP/demoHttpClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/HTTP/demoHttpLib.py" afterPath="$PROJECT_DIR$/Network Programming/HTTP/demoHttpLib.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/HTTP/demoUrlLib.py" afterPath="$PROJECT_DIR$/Network Programming/HTTP/demoUrlLib.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Introduction/function.py" afterPath="$PROJECT_DIR$/Network Programming/Introduction/function.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Introduction/input.txt" afterPath="$PROJECT_DIR$/Network Programming/Introduction/input.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Introduction/inputFile.py" afterPath="$PROJECT_DIR$/Network Programming/Introduction/inputFile.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Introduction/list.py" afterPath="$PROJECT_DIR$/Network Programming/Introduction/list.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Introduction/loop.py" afterPath="$PROJECT_DIR$/Network Programming/Introduction/loop.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Introduction/primeNumber.py" afterPath="$PROJECT_DIR$/Network Programming/Introduction/primeNumber.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/Binary/receiver.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/Binary/receiver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/Binary/sender.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/Binary/sender.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/Character Encoding/receiver.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/Character Encoding/receiver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/Character Encoding/sender.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/Character Encoding/sender.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/JSON/receiver.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/JSON/receiver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/JSON/sender.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/JSON/sender.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/Pickles/receiver.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/Pickles/receiver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Network Data/Pickles/sender.py" afterPath="$PROJECT_DIR$/Network Programming/Network Data/Pickles/sender.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/client.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/server.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/Simple Chat/client.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/Simple Chat/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/Simple Chat/server.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/Simple Chat/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/client.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/server.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Select/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Single Thread/client.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Single Thread/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Server Architecture/Single Thread/server.py" afterPath="$PROJECT_DIR$/Network Programming/Server Architecture/Single Thread/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/TCP/deadlock.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/TCP/deadlock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/TCP/simpleClient.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/TCP/simpleClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/TCP/simpleServer.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/TCP/simpleServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/TCP/solveDeadlock.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/TCP/solveDeadlock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/UDP/broadcastClient.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/UDP/broadcastClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/UDP/broadcastServer.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/UDP/broadcastServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/UDP/multicastClient.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/UDP/multicastClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/UDP/multicastServer.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/UDP/multicastServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/UDP/simpleClient.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/UDP/simpleClient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Network Programming/Socket/UDP/simpleServer.py" afterPath="$PROJECT_DIR$/Network Programming/Socket/UDP/simpleServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Receiver.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Distributed Network/Project/Receiver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="52" column="27" lean-forward="true" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+              <folding>
+                <element signature="e#130#214#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="426" />
+    <option name="y" value="40" />
+    <option name="width" value="1400" />
+    <option name="height" value="949" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Network Programming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d9a904d-acf4-4446-ac9e-56b08c481d01" name="Default" comment="" />
+      <created>1526902354138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1526902354138</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="426" y="40" width="1400" height="949" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Distributed Network/Project/DatabaseHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Distributed Network/Project/Gateway.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network Programming/Server Architecture/Multi Thread/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Distributed Network/Project/Receiver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="52" column="27" lean-forward="true" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding>
+            <element signature="e#130#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

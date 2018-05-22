@@ -1,3 +1,4 @@
+#!/usr/bin/python
 ### Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
 # Import library paho mqtt
 import paho.mqtt.client as mqtt_client
@@ -19,7 +20,7 @@ def collect_data(payload):
     else:
         send_msg(json.dumps(data).encode('utf-8'))
         data[:] = []
-        print("[LOG] Sending Data")
+        print ("[LOG] Sending Data")
 
 # Fungsi mengirim data
 def send_msg(msg):
@@ -35,11 +36,11 @@ def send_msg(msg):
 if __name__ == "__main__":
      
     if(len(argv) < 2) :
-        print ("Usage : python3 Gateway.py <Number of Nodes>")
+        print ("Usage : python Gateway.py <Number of Nodes>")
         exit()
 
     # Define Broker
-    BROKER_IP = "192.168.1.69"
+    BROKER_IP = "192.168.10.11"
     BROKER_PORT = 1883
 
     # Define Receiver
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     # Subscribe ke sebuah topik
     sub.subscribe("/sensor/#")
 
-    print('[Info] Subscribe at {} sensor'.format(str(NODES)))
+    print ('[Info] Subscribe at {} sensor'.format(str(NODES)))
 
     # Loop forever
     sub.loop_forever()

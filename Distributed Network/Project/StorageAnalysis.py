@@ -1,3 +1,4 @@
+#!/usr/bin/python
 ### Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
 # Import Class DatabaseHandler 
 from DatabaseHandler import DatabaseHandler
@@ -10,7 +11,7 @@ import json, time, datetime
 if __name__ == "__main__":
      
     if(len(argv) != 2) :
-        print ("Usage : python3 StorageAnalysis.py <Minute>")
+        print ("Usage : python StorageAnalysis.py <Minute>")
         exit()
 
     STORAGE_IP = "127.0.0.1"
@@ -24,13 +25,13 @@ if __name__ == "__main__":
     while 1:
         try:
             print ("[LOG] Start Dump Data")
-            logs = list(Database.findBulkDocument("sensor",{}))
+            logs = list(Database.findBulkDocument("sensor",select={"_id":False}))
             
             # Writing Data
             Storage = StorageHandler(STORAGE_IP, STORAGE_PORT)
             directory = "/Analysis/"+datetime.datetime.now().strftime("%d%m%y")
             fileName = datetime.datetime.now().strftime("%H%M") + ".json"
-            jsonData = json.dumps(json.loads(dumps(logs)), sort_keys=False,indent=4, separators=(',', ': '))
+            jsonData = json.dumps(json.loads(dumps(logs)))#, sort_keys=False,indent=4, separators=(',', ': '))
             Storage.write(directory+"/"+fileName, "w", jsonData)
             
             print ("[LOG] Success Dump Data")
@@ -39,6 +40,6 @@ if __name__ == "__main__":
             time.sleep(60*int(argv[1]))
 
         except KeyboardInterrupt:
-            print("BYE")
+            print ("BYE")
             exit()
     

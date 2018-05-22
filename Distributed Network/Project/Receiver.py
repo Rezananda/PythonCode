@@ -1,4 +1,5 @@
-### Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
+#!/usr/bin/python
+# Ahmad Riyadh Al Faathin - 155150207111052 - SKT C - Faathin.com ###
 # Import library mqtt, random, json, time
 import socket,threading,signal,sys, struct,json, datetime, os, errno, select, signal
 from sys import argv
@@ -10,15 +11,14 @@ def handle_socket(conn):
         data=recv_msg(conn)
         if(data!=None):
             data=data.decode('utf-8')
-            print("[Receive Data]")
+            print ("[LOG] Receive Data")
             niceJson = json.loads(data)
 
             Database = DatabaseHandler(DATABASE_IP, DATABASE_PORT,"smartSystem")
             Database.insertBulkDocument("sensor",niceJson)
-
     except (socket.error) :
         conn.close()
-        print("[Warn] Connection Closed by Peer")
+        print ("[Warn] Connection Closed by Peer")
     except :
         print ("[Warn] Unexpected error:", sys.exc_info())
         conn.close()
@@ -46,7 +46,7 @@ def recvall(sock, n):
 if __name__ == "__main__":
      
     if(len(argv) != 1) :
-        print ("Usage : python3 Receiver.py")
+        print ("Usage : python Receiver.py")
         exit()
 
     # Define Receiver
@@ -63,8 +63,8 @@ serversock.bind((RECEIVER_IP, RECEIVER_PORT))
 serversock.listen(1)
 rlist = [serversock]
 
-print('Listening at', serversock.getsockname())
-print("Press Crtl+c to exit...")
+print ('Listening at', serversock.getsockname())
+print ("Press Crtl+c to exit...")
 while True:
     try:
         signal.signal(signal.SIGINT, signal.default_int_handler)
@@ -74,10 +74,11 @@ while True:
                 datasock, clientsockaddr = serversock.accept()
                 datasock.setblocking(0)
                 rlist.append(datasock)
-                print('Client {} connected'.format(clientsockaddr))
+                print ('Client {} connected'.format(clientsockaddr))
             else:
                 handle_socket(s)
     except KeyboardInterrupt:
+        print ("BYE")
         break
-
 serversock.close()
+exit()
