@@ -51,4 +51,4 @@ def tambah_sensor():
     
     return "OK"
 
-app.run(port=7777)
+app.run(port=80, host="0.0.0.0")
