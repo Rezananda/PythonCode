@@ -1,7 +1,8 @@
-from flask import *
+from flask import Flask,jsonify,json
 from DatabaseHandler import DatabaseHandler
 from flask_cors import CORS
-import json
+from bson.json_util import dumps
+#import json
 
 app = Flask("Sensor App")
 CORS(app)
@@ -12,9 +13,8 @@ DATABASE_PORT = 27171
 @app.route('/sensor', methods=['GET'])
 def handle_get():
     Database = DatabaseHandler(DATABASE_IP, DATABASE_PORT,"smartSystem")
-    logs = list(Database.findBulkDocument("sensor",select={"_id":False}))
-    jsonData = json.dumps(json.loads(dumps(logs)))
-    return jsonData
+    logs = list(Database.findBulkDocument("sensor", select={"_id":False}, sort=[("datetime",-1)], limit=60))
+    return jsonify(Sensor=logs)
 
 @app.route('/sensor', methods=['POST'])
 def tambah_sensor():
@@ -26,7 +26,7 @@ def tambah_sensor():
     ph = request.json['ph']
     date = request.json['date']
     identifier = request.json['identifier']
-    
+
     new_data = {
         "_id": {
             "$oid": id_sensor
@@ -48,7 +48,7 @@ def tambah_sensor():
     with open("dump_json.json", mode='w', encoding='utf-8') as feedsjson:
         json_data.append(new_data)
         json.dump(json_data, feedsjson)
-    
+
     return "OK"
 
 app.run(port=80, host="0.0.0.0")
